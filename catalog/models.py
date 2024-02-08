@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 
 
@@ -30,6 +32,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='цена за единицу')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='дата изменения')
+    manufactured_at = models.DateTimeField(default=datetime.now, verbose_name='дата производства')
 
     def __str__(self):
         return f'{self.name} {self.description} {self.category} {self.price}'
