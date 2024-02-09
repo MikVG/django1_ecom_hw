@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.db import models
-
+from django.utils import connection
 
 NULLABLE = {'blank': True, 'null': True}
 

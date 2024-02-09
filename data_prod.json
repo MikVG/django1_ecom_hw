@@ -1,0 +1,67 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Macbook Air",
+      "description": "ноутбук макбук эйр",
+      "image": "",
+      "category": 9,
+      "price": "100000.00",
+      "created_at": "2024-02-09T11:04:23.190Z",
+      "updated_at": "2024-02-09T11:04:23.192Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Macbook Pro",
+      "description": "ноутбук макбук про",
+      "image": "",
+      "category": 9,
+      "price": "150000.00",
+      "created_at": "2024-02-09T11:11:23.175Z",
+      "updated_at": "2024-02-09T11:11:23.175Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "IPhone 15",
+      "description": "телефон IPhone 15",
+      "image": "",
+      "category": 10,
+      "price": "80000.00",
+      "created_at": "2024-02-09T11:12:54.877Z",
+      "updated_at": "2024-02-09T11:12:54.877Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "IPhone 14",
+      "description": "телефон IPhone 14",
+      "image": "",
+      "category": 10,
+      "price": "70000.00",
+      "created_at": "2024-02-09T11:13:26.178Z",
+      "updated_at": "2024-02-09T11:13:26.179Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "IPhone 13",
+      "description": "телефон IPhone 13",
+      "image": "",
+      "category": 10,
+      "price": "60000.00",
+      "created_at": "2024-02-09T11:13:46.624Z",
+      "updated_at": "2024-02-09T11:13:46.624Z"
+    }
+  }
+]
