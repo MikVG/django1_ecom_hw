@@ -1,6 +1,7 @@
 {% extends 'catalog/base.html' %}
-
+{% load my_tags %}
 {% block content %}
+
 <div class="container">
     <div class="row text-center">
         <div class="col-6">
@@ -8,6 +9,7 @@
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">{{product.name}}</h4>
                 </div>
+                <img src="{{ product.image | media_filter }}" alt="Product Image" class="img-fluid">
                 <div class="card-body">
                     <h1 class="card-title pricing-card-title">{{product.price}} руб.</h1>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
