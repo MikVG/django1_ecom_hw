@@ -12,6 +12,7 @@
     </div>
     <div class="row text-center">
         {% for object in object_list %}
+        {% if object.is_published %}
         <div class="col-4">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
@@ -30,6 +31,8 @@
                 </div>
             </div>
         </div>
+        {% else %}
+        {% endif %}
         {% endfor %}
     </div>
 </div>
