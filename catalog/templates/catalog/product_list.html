@@ -8,6 +8,9 @@
 </div>
 
 <div class="container">
+    <div class="col-12 mb-5">
+        <a class="btn btn-outline-primary" href="{% url 'catalog:product_create' %}">Добавить товар</a>
+    </div>
     <div class="row text-center">
         {% for object in object_list %}
         <div class="col-3">
@@ -20,8 +23,10 @@
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                         <li>{{object.description | truncatechars:100}}</li>
                     </ul>
-                    <a href="{% url 'catalog:product' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</a>
-                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                    <a href="{% url 'catalog:product' object.pk %}" type="button" class="btn btn-block btn-outline-primary">Подробнее</a>
+                    <a href="{% url 'catalog:product_update' object.pk %}" type="button" class="btn btn-block btn-outline-primary">Изменить</a>
+                    <a href="{% url 'catalog:product_delete' object.pk %}" type="button" class="btn btn-block btn-outline-primary">Удалить</a>
+                    <button type="button" class="btn btn-block btn-outline-primary">Купить</button>
                 </div>
             </div>
         </div>

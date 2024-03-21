@@ -60,3 +60,17 @@ class Blog(models.Model):
     class Meta:
         verbose_name = 'блог'
         verbose_name_plural = 'блоги'
+
+
+# class Version(models.Model):
+#     """
+#     класс для описания модели Версия
+#     """
+#     product =
+#     version_number =
+#     version_name =
+#     current_version = models.BooleanField(default=True, version_name='признак текущей версии')
+#
+#     class Meta:
+#         verbose_name = 'версия'
+#         verbose_name_plural = 'версии'
