@@ -18,7 +18,7 @@ class ProductForm(StyleFormMixin, ModelForm):
 
     class Meta:
         model = Product
-        fields = ('name', 'description', 'image', 'category', 'price')
+        fields = ('name', 'description', 'image', 'category', 'price', 'owner')
 
     forbidden_words = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар']
 

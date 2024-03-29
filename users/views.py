@@ -1,6 +1,9 @@
+import random
 import secrets
 
-from django.shortcuts import get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.hashers import make_password
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView
 
@@ -37,4 +40,22 @@ def confirm_email(request, token):
     user = get_object_or_404(User, token=token)
     user.is_active = True
     user.save()
+    return redirect(reverse('users:login'))
+
+
+#@login_required
+def generate_new_password(request):
+
+
+
+    print(request)
+
+    #if request.method == 'POST':
+    email = request.POST.get('email')
+    print(email)
+    #new_password = ''.join([str(random.randint(0, 9)) for _ in range(8)])
+    #print(new_password)
+    #request.user.make_password(new_password)
+    # request.user.save()
+
     return redirect(reverse('users:login'))
