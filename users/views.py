@@ -43,19 +43,17 @@ def confirm_email(request, token):
     return redirect(reverse('users:login'))
 
 
-#@login_required
+class Users:
+    pass
+
+
 def generate_new_password(request):
-
-
-
     print(request)
-
-    #if request.method == 'POST':
     email = request.POST.get('email')
-    print(email)
-    #new_password = ''.join([str(random.randint(0, 9)) for _ in range(8)])
-    #print(new_password)
-    #request.user.make_password(new_password)
-    # request.user.save()
+    user = User.objects.get(email=email)
+    new_password = ''.join([str(random.randint(0, 9)) for _ in range(8)])
+    print(new_password)
+    user.set_password(new_password)
+    user.save()
 
     return redirect(reverse('users:login'))
