@@ -48,12 +48,13 @@ class Users:
 
 
 def generate_new_password(request):
-    print(request)
     email = request.POST.get('email')
     user = User.objects.get(email=email)
     new_password = ''.join([str(random.randint(0, 9)) for _ in range(8)])
-    print(new_password)
     user.set_password(new_password)
     user.save()
+    message = (f'Вы успешно восстановили пароль!\n'
+               f'Ваш новый пароль: {new_password}')
+    send_mail('Восстановление пароля', message, settings.EMAIL_HOST_USER, [user.email])
 
     return redirect(reverse('users:login'))
