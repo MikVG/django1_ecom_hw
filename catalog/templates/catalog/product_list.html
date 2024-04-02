@@ -13,6 +13,7 @@
     </div>
     <div class="row text-center">
         {% for object in object_list %}
+        {% if perms.catalog.change_published and perms.catalog.change_description and perms.catalog.change_category %}
         <div class="col-3">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
@@ -31,6 +32,27 @@
                 </div>
             </div>
         </div>
+        {% endif %}
+        {% if object.is_published %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{object.name}}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">{{object.price}}</h1>
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li>{{object.description | truncatechars:100}}</li>
+                        <p class="text-center" style="font-size:13px">Версия: {{ object.version.version_number }}</p>
+                    </ul>
+                    <a href="{% url 'catalog:product' object.pk %}" type="button" class="btn btn-block btn-outline-primary">Подробнее</a>
+                    <a href="{% url 'catalog:product_update' object.pk %}" type="button" class="btn btn-block btn-outline-primary">Изменить</a>
+                    <a href="{% url 'catalog:product_delete' object.pk %}" type="button" class="btn btn-block btn-outline-primary">Удалить</a>
+                    <button type="button" class="btn btn-block btn-outline-primary">Купить</button>
+                </div>
+            </div>
+        </div>
+        {% endif %}
         {% endfor %}
     </div>
 </div>
